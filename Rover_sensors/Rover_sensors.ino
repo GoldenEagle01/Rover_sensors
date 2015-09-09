@@ -1,9 +1,4 @@
 //senzor altitudine/presiuna Pa MPL 3115A2
-//wiring SDA sensor - A4 on Arduino, 3.3 V
-//wiring SCL sensor - A5 on Arduino, 3.3 V
-//wiring MQ-4 sensor - A0 on Arduino, 3.3 V
-//wiring Bluetooth Tx - D2 on Arduino, 5 V
-//wiring Bluetooth Rx - D3 on Arduino
 //senzor metan MQ-4
 //senzor temperatura/umiditate HIH-6130
 //Licence: Marin Andrei 2015
@@ -115,7 +110,7 @@ void loop()
   float celsius = myPressure.readTemp();
 
   float tempf = myPressure.readTempF();
-  bluetooth.print("      Temperature(F): ");
+  bluetooth.print("    Temperature(F): ");
   bluetooth.print(tempf);
   bluetooth.println();
 
