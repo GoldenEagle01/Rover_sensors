@@ -19,22 +19,20 @@ task main()
 
 getJoystickSettings(joystick);
 
-if(abs(joystick.joy1_y2) > eroare) // pentru valoare analog mai mare decat eroarea
-{
-motor[motorD] = joystick.joy1_y2; // analogul da valoarea motorului D
-}
-else
-{
-motor[motorD] = 0; // motor D oprit
-}
-
 if(abs(joystick.joy1_y1) > eroare) // daca valoare absoluta analog e mai mare ca eroarea
 {
 motor[motorE] = joystick.joy1_y1; // motor E primeste valoarea datei analog joystick
+motor[motorD] = joystick.joy1_y1; // motor D primeste valoarea datei analog joystick
+}
+if ((abs(joystick.joy1_x1)) > eroare) //daca valoarea absoluta analog e mai mare ca eroare
+{
+	motor[motorD] = joystick.joy1_x1;
+	motor[motorE] = -(joystick.joy1_x1);
 }
 else
 {
 motor[motorE] = 0; // motor E e oprit
+motor[motorD] = 0; // motor D e oprit
 }
 
 int a = ServoValue[servo1];
